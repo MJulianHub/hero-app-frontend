@@ -101,9 +101,12 @@ export const HeroGridCard = ({ hero }: Props) => {
         {/* Stats */}
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-1">
-            <div className="flex items-center gap-1">
-              <Zap className="h-3 w-3 text-orange-500" />
-              <span className="text-xs font-medium">Strength</span>
+            <div className="flex items-center justify-between gap-1">
+              <div className="flex items-center gap-1">
+                <Zap className="h-3 w-3 text-orange-500" />
+                <span className="text-xs font-medium">Strength</span>
+              </div>
+              <span className="text-xs font-bold text-orange-500">{hero.strength}</span>
             </div>
             <Progress
               value={hero.strength * 10}
@@ -112,9 +115,12 @@ export const HeroGridCard = ({ hero }: Props) => {
             />
           </div>
           <div className="space-y-1">
-            <div className="flex items-center gap-1">
-              <Brain className="h-3 w-3 text-blue-500" />
-              <span className="text-xs font-medium">Intelligence</span>
+            <div className="flex items-center justify-between gap-1">
+              <div className="flex items-center gap-1">
+                <Brain className="h-3 w-3 text-blue-500" />
+                <span className="text-xs font-medium">Intelligence</span>
+              </div>
+              <span className="text-xs font-bold text-blue-500">{hero.intelligence}</span>
             </div>
             <Progress
               value={hero.intelligence * 10}
@@ -123,9 +129,12 @@ export const HeroGridCard = ({ hero }: Props) => {
             />
           </div>
           <div className="space-y-1">
-            <div className="flex items-center gap-1">
-              <Gauge className="h-3 w-3 text-green-500" />
-              <span className="text-xs font-medium">Speed</span>
+            <div className="flex items-center justify-between gap-1">
+              <div className="flex items-center gap-1">
+                <Gauge className="h-3 w-3 text-green-500" />
+                <span className="text-xs font-medium">Speed</span>
+              </div>
+              <span className="text-xs font-bold text-green-500">{hero.speed}</span>
             </div>
             <Progress
               value={hero.speed * 10}
@@ -134,9 +143,12 @@ export const HeroGridCard = ({ hero }: Props) => {
             />
           </div>
           <div className="space-y-1">
-            <div className="flex items-center gap-1">
-              <Shield className="h-3 w-3 text-purple-500" />
-              <span className="text-xs font-medium">Durability</span>
+            <div className="flex items-center justify-between gap-1">
+              <div className="flex items-center gap-1">
+                <Shield className="h-3 w-3 text-purple-500" />
+                <span className="text-xs font-medium">Durability</span>
+              </div>
+              <span className="text-xs font-bold text-purple-500">{hero.durability}</span>
             </div>
             <Progress
               value={hero.durability * 10}
