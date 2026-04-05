@@ -13,11 +13,11 @@ export const SearchPage = () => {
 
       <CustomBreadCrumbs
         currentPage="Buscardor heroes"
-        breadcrumbs={[
-          { label: "Home", to: "/" },
-          { label: "Home2", to: "/" },
-          { label: "Home3", to: "/" },
-        ]}
+        // breadcrumbs={[
+        //   { label: "Home", to: "/" },
+        //   { label: "Home2", to: "/" },
+        //   { label: "Home3", to: "/" },
+        // ]}
       />
 
       {/* Stats Dashboard */}

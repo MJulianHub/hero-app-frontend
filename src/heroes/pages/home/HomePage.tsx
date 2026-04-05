@@ -5,12 +5,14 @@ import { HeroStats } from "@/heroes/components/HeroStats";
 import { HeroGrid } from "@/heroes/components/HeroGrid";
 import { CustomPagination } from "@/components/custom/CustomPagination";
 import { CustomBreadCrumbs } from "@/components/custom/CustomBreadCrumbs";
-import { useMemo } from "react";
+import { use, useMemo } from "react";
 import { useHeroSummary } from "@/heroes/hooks/useHeroSummary";
 import { usePaginatedHero } from "@/heroes/hooks/usePaginatedHero";
+import { FavoriteHeroContext } from "@/heroes/context/FavoriteHeroContext";
 
 export const HomePage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { favoriteCount, favorites } = use(FavoriteHeroContext);
 
   console.log(searchParams.get("page"));
   console.log(searchParams.get("offset"));
@@ -75,7 +77,7 @@ export const HomePage = () => {
                 })
               }
             >
-              Favorites (3)
+              Favorites ({favoriteCount})
             </TabsTrigger>
             <TabsTrigger
               value="heroes"
@@ -112,8 +114,7 @@ export const HomePage = () => {
 
           <TabsContent value="favorites">
             {/* Mostrar todos los personajes favoritos */}
-            <h1>Favoritos</h1>
-            <HeroGrid heroes={[]} />
+            <HeroGrid heroes={favorites} />
           </TabsContent>
 
           <TabsContent value="heroes">
@@ -132,7 +133,9 @@ export const HomePage = () => {
         </Tabs>
 
         {/* Pagination */}
-        <CustomPagination totalPages={heroesResponse?.pages ?? 1} />
+        {selectedTab !== "favorites" && (
+          <CustomPagination totalPages={heroesResponse?.pages ?? 1} />
+        )}
       </>
     </>
   );
