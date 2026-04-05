@@ -3,7 +3,7 @@ import type { Hero } from "../types/hero.interface";
 
 const VITE_API_URL = import.meta.env.VITE_API_URL;
 
-const ALLOWED_CATEGORIES = ["Héroe", "Villano", "Antiheroe"];
+const ALLOWED_CATEGORIES = ["hero", "villain", "antihero"];
 const ALLOWED_UNIVERSES = ["DC", "Marvel"];
 const ALLOWED_STATUSES = ["Active", "Inactive", "Retired"];
 

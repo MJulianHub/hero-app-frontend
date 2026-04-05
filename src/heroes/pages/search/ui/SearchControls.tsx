@@ -55,7 +55,9 @@ export const SearchControls = () => {
 
         <div className="flex gap-2">
           <Button
-            variant={activeAccordion == "advance-filters" ? "default" : "outline"}
+            variant={
+              activeAccordion == "advance-filters" ? "default" : "outline"
+            }
             className="h-12"
             onClick={() => {
               if (activeAccordion == "advance-filters") {

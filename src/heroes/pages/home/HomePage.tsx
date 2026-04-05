@@ -108,27 +108,19 @@ export const HomePage = () => {
           </TabsList>
 
           <TabsContent value="all">
-            {/* Mostrar todos los personajes */}
             <HeroGrid heroes={heroesResponse?.heroes ?? []} />
           </TabsContent>
 
           <TabsContent value="favorites">
-            {/* Mostrar todos los personajes favoritos */}
             <HeroGrid heroes={favorites} />
           </TabsContent>
 
           <TabsContent value="heroes">
-            {/* Mostrar todos los heroes */}
             <HeroGrid heroes={heroesResponse?.heroes ?? []} />
-            <h1>Heroes</h1>
-            <HeroGrid heroes={[]} />
           </TabsContent>
 
           <TabsContent value="villains">
-            {/* Mostrar todos los vilanos */}
             <HeroGrid heroes={heroesResponse?.heroes ?? []} />
-            <h1>Villanos</h1>
-            <HeroGrid heroes={[]} />
           </TabsContent>
         </Tabs>
 
